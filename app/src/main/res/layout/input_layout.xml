@@ -7,22 +7,31 @@
     tools:context="com.example.seohyun.myapplication.InputActivity">\
 
     <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="날짜"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+    <EditText
+        android:id="@+id/editDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/date"
+        android:layout_alignStart="@+id/outputmoney"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
         android:id="@+id/input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/output"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_marginBottom="22dp"
         android:text="수입"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
-
-    <TextView
-        android:id="@+id/output"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="62dp"
-        android:text="지출"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
     <EditText
@@ -33,6 +42,15 @@
         android:layout_toEndOf="@+id/input"
         android:ems="10"
         android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="지출"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
     <EditText
         android:id="@+id/outputmoney"
@@ -47,9 +65,9 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/input_main_btn"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/output"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="108dp"
         android:text="종합"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
@@ -67,11 +85,20 @@
         android:id="@+id/confirm_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/result1"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/outputmoney"
-        android:layout_marginEnd="34dp"
-        android:text="CONFIRM"
-        android:onClick="addClick"/>
+        android:layout_marginEnd="36dp"
+        android:onClick="addClick"
+        android:text="CONFIRM" />
+
+    <Button
+        android:id="@+id/editbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/confirm_btn"
+        android:layout_below="@+id/result1"
+        android:onClick="updateClick"
+        android:text="EDIT" />
 
     <Button
         android:id="@+id/input_main_btn"

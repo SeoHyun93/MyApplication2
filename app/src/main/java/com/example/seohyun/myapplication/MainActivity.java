@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    DatebaseHelper myDb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +20,12 @@ public class MainActivity extends AppCompatActivity {
         Button button2;
         Button button3;
 
+
         button=(Button)findViewById(R.id.Asset_btn);
         button1=(Button)findViewById(R.id.Input_btn);
         button2=(Button)findViewById(R.id.Category_btn);
         button3=(Button)findViewById(R.id.Restriction_btn);
+
 
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -64,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent4);
             }
         });
+
+        myDb = new DatebaseHelper(this);
+
     }
 }
 
