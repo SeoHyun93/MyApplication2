@@ -33,13 +33,14 @@ public class AssetActivity extends AppCompatActivity {
         expandableCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int date) {
-                String InputDate = (String.valueOf(year)+String.valueOf(month+1)+String.valueOf(date));
+
+                String InputDate = (String.valueOf(year)+String.valueOf(String.format("%02d",month+1))+String.valueOf(String.format("%02d",date)));
 
                 Cursor res = myDb.getAllData();
 
                 res.moveToFirst();
 
-                date_tv.setText(String.valueOf(year) + "/" + String.valueOf(month+1) + "/" + String.valueOf(date) + "/");
+                date_tv.setText(String.valueOf(year) + "/" + String.valueOf(String.format("%02d",month+1)) + "/" + String.valueOf(String.format("%02d",date)));
 
                 if(res.getCount() == 0){
                     showMessage("Error","Nothing");

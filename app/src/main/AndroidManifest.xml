@@ -19,7 +19,8 @@
         <activity android:name=".AssetActivity" />
         <activity android:name=".InputActivity" />
         <activity android:name=".CategoryActivity" />
-        <activity android:name=".RestrictionActivity"></activity>
+        <activity android:name=".RestrictionActivity" />
+        <activity android:name=".DateCalActivity"></activity>
     </application>
 
 </manifest>

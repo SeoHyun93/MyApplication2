@@ -12,9 +12,11 @@ import android.widget.Toast;
 public class InputActivity extends AppCompatActivity {
     DatebaseHelper myDb;
 
-    EditText editDate,income,expense;
-    TextView result;
+    EditText income,expense;
+    TextView editDate,result;
     Button button,btnaddData,btneditData,btndeleteData;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,6 @@ public class InputActivity extends AppCompatActivity {
         setContentView(R.layout.input_layout);
 
         button=(Button)findViewById(R.id.input_main_btn);
-
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -38,7 +39,11 @@ public class InputActivity extends AppCompatActivity {
 
             }
         });
-        editDate = (EditText)findViewById(R.id.editDate);
+
+        Intent intent = getIntent();
+        String date = intent.getStringExtra("date1");
+
+        editDate = (TextView)findViewById(R.id.editDate);
         income = (EditText)findViewById(R.id.income);
         expense = (EditText)findViewById(R.id.expense);
         result = (TextView) findViewById(R.id.result1);
@@ -46,6 +51,8 @@ public class InputActivity extends AppCompatActivity {
         btnaddData = (Button)findViewById(R.id.confirm_btn);
         btndeleteData = (Button)findViewById(R.id.deletebtn);
         btneditData = (Button)findViewById(R.id.editbtn);
+
+        editDate.setText(date);
 
         AddData();
         UpdateData();

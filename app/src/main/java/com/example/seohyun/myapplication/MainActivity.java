@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Button button1;
         Button button2;
         Button button3;
+        Button entercalendarbtn;
 
 
         button=(Button)findViewById(R.id.Asset_btn);
@@ -73,6 +74,18 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent4=new Intent(MainActivity.this,RestrictionActivity.class);
 
                 startActivity(intent4);
+            }
+        });
+
+        entercalendarbtn = (Button)findViewById(R.id.entercalendar);
+        entercalendarbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent2 = new Intent(MainActivity.this,DateCalActivity.class);
+
+                startActivity(intent2);
+
             }
         });
 
