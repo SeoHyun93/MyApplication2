@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/date"
-        android:layout_alignStart="@+id/outputmoney"
+        android:layout_alignStart="@+id/expense"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -35,7 +35,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
     <EditText
-        android:id="@+id/inputmoney"
+        android:id="@+id/income"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/input"
@@ -49,11 +49,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:text="지출"
+        android:text="@string/expense"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
     <EditText
-        android:id="@+id/outputmoney"
+        android:id="@+id/expense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/output"
@@ -77,7 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/result"
         android:layout_alignBottom="@+id/result"
-        android:layout_alignStart="@+id/outputmoney"
+        android:layout_alignStart="@+id/expense"
         android:hint="종합"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
@@ -88,7 +88,6 @@
         android:layout_alignBottom="@+id/result1"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="36dp"
-        android:onClick="addClick"
         android:text="CONFIRM" />
 
     <Button
@@ -97,7 +96,6 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/confirm_btn"
         android:layout_below="@+id/result1"
-        android:onClick="updateClick"
         android:text="EDIT" />
 
     <Button
@@ -107,5 +105,13 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="MAIN" />
+
+    <Button
+        android:id="@+id/deletebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editbtn"
+        android:layout_below="@+id/editbtn"
+        android:text="DELETE" />
 
 </RelativeLayout>

@@ -34,6 +34,12 @@ public class DatebaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public Cursor getAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res  = db.rawQuery("select * from " + TABLE_NAME,null);
+        return res;
+    }
+
     public boolean insertData(String date, String income, String expense, String budget){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -48,19 +54,19 @@ public class DatebaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public Cursor getAllData(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res  = db.rawQuery("select * from " + TABLE_NAME,null);
-        return res;
-    }
-
     public boolean updateData(String date,String income, String expense, String result){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_1,date);
         contentValues.put(COL_2,income);
         contentValues.put(COL_3,expense);
         contentValues.put(COL_4,result);
         db.update(TABLE_NAME, contentValues, "DATE = ?", new String[] {date} );
         return true;
+    }
+
+    public Integer deleteData (String date){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME,"DATE = ?",new String[] {date});
     }
 }
